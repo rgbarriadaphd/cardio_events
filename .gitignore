@@ -130,3 +130,7 @@ dmypy.json
 
 
 *.idea
+input
+output
+__pycache__
+*.pyc
