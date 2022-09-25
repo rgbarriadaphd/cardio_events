@@ -21,10 +21,10 @@ assert os.path.exists(LOGS_FOLDER)
 TRAIN_FOLDER = os.path.join(OUTPUT_FOLDER, 'train')
 assert os.path.exists(TRAIN_FOLDER)
 
-CAC_DATASET_FOLDER = os.path.join(INPUT_FOLDER, 'CAC')
-assert os.path.exists(CAC_DATASET_FOLDER)
+CE_DATASET_FOLDER = os.path.join(INPUT_FOLDER, 'CE')
+assert os.path.exists(CE_DATASET_FOLDER)
 
-DYNAMIC_RUN_FOLDER = os.path.join(CAC_DATASET_FOLDER, 'dynamic_run')
+DYNAMIC_RUN_FOLDER = os.path.join(CE_DATASET_FOLDER, 'dynamic_run')
 assert os.path.exists(DYNAMIC_RUN_FOLDER)
 
 

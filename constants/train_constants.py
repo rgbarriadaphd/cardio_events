@@ -11,9 +11,9 @@ Description: Constants regarding train process management
 # =======================
 from constants.path_constants import CAC_DATASET_FOLDER
 
-DATASETS = {'CAC': {'batch_size': 8, 'class_values': {'CACSmenos400': 0, 'CACSmas400': 1}, 'path': CAC_DATASET_FOLDER,
-                    'selector': [1, 1],
-                    }}
+DATASETS = {'CE': {'batch_size': 8, 'class_values': {'CACSmenos400': 0, 'CACSmas400': 1}, 'path': CAC_DATASET_FOLDER,
+                   'selector': [1, 1],
+                   }}
 
 CUSTOM_NORMALIZED = True  # whether image is normalized retina-based (true) or Imagenet-based (false)
 MODEL_SEED = 3  # Fix seed to generate always deterministic results (same random numbers)
@@ -23,7 +23,7 @@ WEIGHT_INIT = 'Seeded'  # Weight init . Supported --> ['KaimingUniform', 'Kaimin
 # Train hyperparameters
 # =======================
 
-EPOCHS = 150
+EPOCHS = 500
 LEARNING_RATE = 0.0001
 LR_SCHEDULER = False
 WEIGHT_DECAY = 4e-2
