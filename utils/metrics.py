@@ -10,7 +10,7 @@ import logging
 import statistics
 import math
 
-from constants.train_constants import ND
+ND = 2
 
 
 class CrossValidationMeasures:
@@ -236,28 +236,28 @@ class PerformanceMetrics:
 
 
 if __name__ == '__main__':
-    # Test functions
-    mground = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    mprediction = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1]
-    pm = PerformanceMetrics(mground, mprediction, percent=True, formatted=True)
-    conf_matrix = pm.confusion_matrix()
+    # # Test functions
+    # mground = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    # mprediction = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1]
+    # pm = PerformanceMetrics(mground, mprediction, percent=True, formatted=True)
+    # conf_matrix = pm.confusion_matrix()
+    #
+    # assert conf_matrix[0] == 17
+    # assert conf_matrix[1] == 2
+    # assert conf_matrix[2] == 3
+    # assert conf_matrix[3] == 8
+    #
+    # print(f'TN: {conf_matrix[0]}')
+    # print(f'FP: {conf_matrix[1]}')
+    # print(f'FN: {conf_matrix[2]}')
+    # print(f'TP: {conf_matrix[3]}')
+    #
+    # print(f'Accuracy: {pm.accuracy()}')
+    # print(f'Recall: {pm.recall()}')
+    # print(f'Precision: {pm.precision()}')
+    # print(f'F1-measure: {pm.f1()}')
 
-    assert conf_matrix[0] == 17
-    assert conf_matrix[1] == 2
-    assert conf_matrix[2] == 3
-    assert conf_matrix[3] == 8
-
-    print(f'TN: {conf_matrix[0]}')
-    print(f'FP: {conf_matrix[1]}')
-    print(f'FN: {conf_matrix[2]}')
-    print(f'TP: {conf_matrix[3]}')
-
-    print(f'Accuracy: {pm.accuracy()}')
-    print(f'Recall: {pm.recall()}')
-    print(f'Precision: {pm.precision()}')
-    print(f'F1-measure: {pm.f1()}')
-
-    measures = [0.51, 0.45, 0.78, 0.79, 0.82]
+    measures = [0.00,100.00,0.00,0.00,0.00]
     cvm = CrossValidationMeasures(measures, percent=True, formatted=True)
 
     print(f'Mean: {cvm.mean()}')

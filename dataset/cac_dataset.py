@@ -20,7 +20,7 @@ def get_custom_normalization():
     Get normalization according to input train dataset
     :return: ((list) mean, (list) std) Normalization values mean and std
     """
-    target = os.path.join(CAC_DATASET_FOLDER, TRAIN)
+    target = os.path.join(DYNAMIC_RUN_FOLDER, TRAIN)
 
     means = []
     stds = []
@@ -73,7 +73,7 @@ class CustomImageFolder(datasets.ImageFolder):
         return sample, label, index, self.dataset_name
 
 
-def load_and_transform_data(stage, shuffle=False, mean=None, std=None):
+def load_and_transform_data(stage, shuffle=False,mean=None, std=None):
     """
     Loads a dataset and applies the corresponding transformations
     :param stage: (str) Dataset to be loaded based on stage: train, test, validation (if any)
@@ -96,11 +96,11 @@ def load_and_transform_data(stage, shuffle=False, mean=None, std=None):
 
     dataset_loaders = []
     for dataset_name, data in DATASETS.items():
+
         dataset_path = os.path.join(os.path.abspath(DATASETS[dataset_name]['path']), stage)
-        custom_class_values = DATASETS[dataset_name]['class_values'] if stage=='train' else {'CACSmas400': 1}
         dataset = CustomImageFolder(dataset_path,
                                     dataset_name,
-                                    class_values=custom_class_values,
+                                    class_values=DATASETS[dataset_name]['class_values'],
                                     transform=data_transforms)
 
         bs = DATASETS[dataset_name]['batch_size'] if stage == 'train' else 1

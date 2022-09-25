@@ -27,12 +27,14 @@ assert os.path.exists(CE_DATASET_FOLDER)
 DYNAMIC_RUN_FOLDER = os.path.join(CE_DATASET_FOLDER, 'dynamic_run')
 assert os.path.exists(DYNAMIC_RUN_FOLDER)
 
+ROOT_ORIGINAL_FOLDS = os.path.join(CE_DATASET_FOLDER, 'outer_folds')
+assert os.path.exists(ROOT_ORIGINAL_FOLDS)
 
-CAC_NEGATIVE = 'CACSmenos400'
-CAC_POSITIVE = 'CACSmas400'
+CEP = 'CEP'
+CEN = 'CEN'
 TRAIN = 'train'
 TEST = 'test'
 
 # Templates
 # =======================
-SUMMARY_TEMPLATE = 'templates/summary.tpl'
+SUMMARY_TEMPLATE = 'templates/summary_{}.tpl'
